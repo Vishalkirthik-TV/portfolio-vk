@@ -11,7 +11,7 @@ import { socialMedia } from "@/data";
 
 export const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [successMessage, setSuccessMessage] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({

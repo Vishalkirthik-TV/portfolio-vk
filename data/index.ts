@@ -77,7 +77,7 @@ export const projects = [
     title: "Galerie - Digital NFT MarketPlace",
     des: "A Online MarketPlace for Artisians, Collectors and Creators.",
     img: "/galerie.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    iconLists: ["/re.svg", "/pinata-svgrepo-com.svg", "/metamask-icon.svg", "/Hardhat.svg", "/Solidity.svg", "/CSS3.svg"],
     link: "https://galerie-one.vercel.app/",
     sourceCode: "https://github.com/arogyaconnect/Galerie",
   },
@@ -86,27 +86,27 @@ export const projects = [
     title: "Discover the Power of Social Media Insights",
     des: "Unlock insights into social media engagement using Langflow and DataStax. Get started by exploring the analytics tool designed to provide dynamic insights.",
     img: "/splore.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://clone-yoom.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/zoom-clone",
+    iconLists: ["/re.svg", "/CSS3.svg", "/js.svg", "/jwt.svg", "/langflow.svg"],
+    link: "https://splore-ai.vercel.app",
+    sourceCode: "https://splore-ai.vercel.app",
   },
   {
     id: 3,
     title: "AI Image SaaS - Canva Application",
     des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://ai-imaginify.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/imaginify",
+    img: "/find-my-bills.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/azure.svg", "/firebase.svg"],
+    link: "https://findmybills.vercel.app",
+    sourceCode: "https://findmybills.vercel.app",
   },
   {
     id: 4,
     title: "Animated Apple Iphone 3D Website",
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://app-iphone.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/apple-clone",
+    img: "/nayepankh.png",
+    iconLists: ["/vite.svg", "/re.svg", "/mui.svg", "/ts.svg", "/firebase.svg", "/razorpay.png"],
+    link: "https://nayepankh-tan.vercel.app",
+    sourceCode: "https://nayepankh-tan.vercel.app",
   },
 ] as const;
 
@@ -221,6 +221,6 @@ export const socialMedia = [
 ] as const;
 
 export const techStack = {
-  stack1: ["React.js", "Next.js", "Typescript"],
+  stack1: ["React.js", "Next.js", "Typescript","Material UI"],
   stack2: ["Vue.js", "AWS", "MongoDB"],
 } as const;

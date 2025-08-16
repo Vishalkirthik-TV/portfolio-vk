@@ -16,7 +16,10 @@ export const Hero = () => {
           className="-left-10 -top-40 h-screen md:-left-32 md:-top-20"
           fill="white"
         />
-        <Spotlight className="left-full top-10 h-[80vh] w-[50vw]" fill="purple" />
+        <Spotlight
+          className="left-full top-10 h-[80vh] w-[50vw]"
+          fill="purple"
+        />
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
@@ -33,15 +36,16 @@ export const Hero = () => {
             </h2>
 
             <TextGenerateEffect
-              className="text-center text-[40px] md:text-5xl lg:text-6xl md:text-left"
+              className="max-w-[650px] text-center text-[40px] leading-tight tracking-wide md:text-left md:text-5xl lg:text-6xl"
               words="Transforming Concepts into Seamless User Experiences"
             />
 
-            <p className="mb-4 text-center text-sm md:text-lg md:tracking-wider lg:text-2xl md:text-left">
-              Hi, I&apos;m {links.ownerName}, a FullStack developer based in India.
+            <p className="mb-4 text-center text-sm md:text-left md:text-lg md:tracking-wider lg:text-2xl">
+              Hi, I&apos;m {links.ownerName}, a FullStack developer based in
+              India.
             </p>
 
-            <Link href="#about" className="md:mt-6">
+            <Link href="#about" className="md:mt-6 mb-3">
               <MagicButton
                 title="Show my work"
                 icon={<FaLocationArrow />}
@@ -55,14 +59,14 @@ export const Hero = () => {
           <div className="flex justify-center md:justify-end">
             <div className="relative flex items-center justify-center">
               {/* White Circular Background */}
-              <div className="absolute -z-10 h-[240px] w-[240px] md:h-[280px] md:w-[280px] rounded-full bg-white shadow-md" />
+              <div className="absolute -z-10 h-[240px] w-[240px] rounded-full bg-white shadow-md md:h-[280px] md:w-[280px]" />
 
               <Image
                 src={heroImg}
                 alt="Developer at work"
                 width={280}
                 height={280}
-                className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full shadow-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-blue-500/50"
+                className="h-[200px] w-[200px] rounded-full shadow-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-blue-500/50 md:h-[250px] md:w-[250px]"
               />
             </div>
           </div>

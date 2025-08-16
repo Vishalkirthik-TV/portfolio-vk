@@ -146,7 +146,7 @@ export const BentoGridItem = ({
               </div>
 
               <div className="flex flex-col gap-3 lg:gap-8">
-                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
+                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center animate-[customMove_6s_linear_infinite]" />
                 {techStack.stack2.map((item) => (
                   <span
                     key={item}

@@ -13,7 +13,7 @@ export const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,21 +22,21 @@ const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     const serviceId = "service_u5kpf8a";
     const templateId = "template_ma9q9ml";
     const publicKey = "ZoczoxkteCk4-pAqv";
-  
+
     setIsLoading(true); // Show loading state
-  
+
     try {
       await emailjs.send(serviceId, templateId, formData, publicKey);
-  
+
       setSuccessMessage("✅ Message sent successfully!"); // Show success message
-  
+
       // Reset form
       setFormData({ name: "", email: "", message: "" });
-  
+
       // Hide success message & close modal after 3 seconds
       setTimeout(() => {
         setSuccessMessage("");
@@ -45,7 +45,7 @@ const [isLoading, setIsLoading] = useState(false);
     } catch (error) {
       console.error("Error sending email:", error);
       setErrorMessage("❌ Failed to send message. Please try again.");
-      
+
       // Hide error message after 3 seconds
       setTimeout(() => {
         setErrorMessage("");
@@ -54,7 +54,6 @@ const [isLoading, setIsLoading] = useState(false);
       setIsLoading(false); // Hide loading state
     }
   };
-  
 
   return (
     <footer id="contact" className="mb-[100px] w-full pb-10 md:mb-auto">
@@ -75,7 +74,8 @@ const [isLoading, setIsLoading] = useState(false);
         </h1>
 
         <p className="my-5 text-center text-white-200 md:mt-10">
-          Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
+          Reach out to me today and let&apos;s discuss how I can help you
+          achieve your goals.
         </p>
 
         {/* Open Contact Modal */}
@@ -90,63 +90,70 @@ const [isLoading, setIsLoading] = useState(false);
       </div>
 
       {isModalOpen && (
-  <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#000319]/80 backdrop-blur-md">
-    <div className="bg-white/10 p-8 rounded-2xl shadow-xl w-96 border border-white/20 backdrop-blur-lg text-white relative">
-      <h2 className="text-3xl font-bold mb-5 text-center text-white">Get in Touch</h2>
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#000319]/80 backdrop-blur-md">
+          <div className="relative w-96 rounded-2xl border border-white/20 bg-white/10 p-8 text-white shadow-xl backdrop-blur-lg">
+            <h2 className="mb-5 text-center text-3xl font-bold text-white">
+              Get in Touch
+            </h2>
 
-      {successMessage && (
-        <div className="absolute top-[-60px] left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg animate-fade-in">
-          ✅ Message Sent Successfully!
+            {successMessage && (
+              <div className="animate-fade-in absolute left-1/2 top-[-60px] -translate-x-1/2 transform rounded-lg bg-green-500 px-5 py-3 text-white shadow-lg">
+                ✅ Message Sent Successfully!
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="focus:ring-purple-500 rounded-lg border border-white/30 bg-transparent p-4 text-white placeholder-gray-300 outline-none focus:ring-2"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                required
+              />
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="focus:ring-purple-500 rounded-lg border border-white/30 bg-transparent p-4 text-white placeholder-gray-300 outline-none focus:ring-2"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                required
+              />
+
+              <textarea
+                placeholder="Your Message"
+                className="focus:ring-purple-500 rounded-lg border border-white/30 bg-transparent p-4 text-white placeholder-gray-300 outline-none focus:ring-2"
+                rows={5}
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+                required
+              />
+
+              <button
+                type="submit"
+                className="border-purple-500 rounded-lg border-2 bg-gradient-to-r from-[#6a11cb] to-[#eecbfa] p-4 font-semibold text-white transition-all duration-300 ease-in-out hover:scale-105 hover:border-white hover:shadow-lg hover:shadow-blue-500/50"
+              >
+                Send Message
+              </button>
+            </form>
+
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(false)}
+              className="absolute right-4 top-3 text-xl font-medium text-white transition hover:text-red-400"
+            >
+              ✖
+            </button>
+          </div>
         </div>
       )}
-
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="border border-white/30 p-4 rounded-lg bg-transparent text-white placeholder-gray-300 focus:ring-2 focus:ring-purple-500 outline-none"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          required
-        />
-
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="border border-white/30 p-4 rounded-lg bg-transparent text-white placeholder-gray-300 focus:ring-2 focus:ring-purple-500 outline-none"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          required
-        />
-
-        <textarea
-          placeholder="Your Message"
-          className="border border-white/30 p-4 rounded-lg bg-transparent text-white placeholder-gray-300 focus:ring-2 focus:ring-purple-500 outline-none"
-          rows={5}
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          required
-        />
-
-        <button
-          type="submit"
-          className="border-2 border-purple-500 bg-gradient-to-r from-[#6a11cb] to-[#eecbfa] text-white p-4 rounded-lg font-semibold hover:scale-105 hover:border-white transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-blue-500/50"
-        >
-          Send Message
-        </button>
-      </form>
-
-      <button
-        type="button"
-        onClick={() => setIsModalOpen(false)}
-        className="absolute top-3 right-4 text-white text-xl font-medium hover:text-red-400 transition"
-      >
-        ✖
-      </button>
-    </div>
-  </div>
-)}
-
 
       {/* Footer Content */}
       <div className="relative z-[999] mt-16 flex flex-col items-center justify-between md:flex-row">

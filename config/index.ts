@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const links = {
   sourceCode: "https://github.com/vkboi5/portfolio-vk",
   ownerName: "Vishalkirthik",
-  ownerEmail: "vkirthikjan5@gmail.com",
+  ownerEmail: "vishalkirthiktv@gmail.com",
 } as const;
 
 export const siteConfig: Metadata = {

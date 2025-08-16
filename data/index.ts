@@ -92,8 +92,8 @@ export const projects = [
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "Freelance Project - Find My Bills",
+    des: "Never Lose Your Bills Again. Your one-stop solution to store, search & retrieve all your invoices, bills, and travel tickets — anytime, anywhere.",
     img: "/find-my-bills.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/azure.svg", "/firebase.svg"],
     link: "https://findmybills.vercel.app",
@@ -101,8 +101,8 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "Internship Project - Nayepankh",
+    des: "Nayepankh is a complete revamp of the public webiste of NGO Nayepankh",
     img: "/nayepankh.png",
     iconLists: ["/vite.svg", "/re.svg", "/mui.svg", "/ts.svg", "/firebase.svg", "/razorpay.png"],
     link: "https://nayepankh-tan.vercel.app",

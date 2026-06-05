@@ -1,12 +1,12 @@
 import { workExperience, achievements } from "@/data";
-import { 
-  IconTrophyCircle, 
-  IconFlagDocument, 
-  IconFacetedTrophy, 
-  IconRibbonMedal, 
-  IconShieldBadge, 
-  IconDiamondTrophy, 
-  IconCapstoneCrown 
+import {
+  IconTrophyCircle,
+  IconFlagDocument,
+  IconFacetedTrophy,
+  IconRibbonMedal,
+  IconShieldBadge,
+  IconDiamondTrophy,
+  IconCapstoneCrown
 } from "@/components/ui/achievement-icons";
 
 // Helper to resolve custom SVGs matching the user's reference image style
@@ -126,11 +126,10 @@ export const Experience = () => {
           return (
             <div
               key={idx}
-              className={`nb-card nb-card-clickable p-5 flex items-center gap-4 relative overflow-hidden transition-all duration-150 group select-none ${
-                isLast
+              className={`nb-card nb-card-clickable p-5 flex items-center gap-4 relative overflow-hidden transition-all duration-150 group select-none ${isLast
                   ? "col-span-1 md:col-span-2 lg:col-span-3 border-4 border-nb-dark dark:border-white shadow-[8px_8px_0px_var(--nb-shadow-color)] hover:shadow-[10px_10px_0px_var(--nb-shadow-color)]"
                   : "col-span-1"
-              }`}
+                }`}
               style={{ backgroundColor: ach.color }}
             >
               {/* Custom SVG achievement icon tilts on hover */}

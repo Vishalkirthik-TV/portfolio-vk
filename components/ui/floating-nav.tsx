@@ -38,7 +38,7 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
           className="flex items-center gap-2.5 group font-space font-extrabold text-base md:text-lg text-nb-dark dark:text-white uppercase tracking-wider"
         >
           <div className="w-9 h-9 rounded-full bg-nb-coral border-2 border-nb-dark dark:border-white flex items-center justify-center shadow-[2px_2px_0px_#1a1a1a] dark:shadow-[2px_2px_0px_#FFFDF7] transition-all group-hover:bg-nb-yellow group-hover:shadow-[3px_3px_0px_#1a1a1a] dark:group-hover:shadow-[3px_3px_0px_#FFFDF7] group-hover:rotate-12">
-            <span className="text-sm">V</span>
+            <span className="text-sm">VK</span>
           </div>
           <span className="hidden sm:inline-block">VishalKirthik TV</span>
         </Link>

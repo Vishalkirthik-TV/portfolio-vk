@@ -83,9 +83,6 @@ export const Grid = () => {
             <span className="inline-block w-5 h-5 bg-[#4ECDC4] border-2 border-nb-dark" />
             Core Skills & Tech Stack
           </h3>
-          <p className="font-inter text-sm text-nb-dark/60 dark:text-white/60 mt-2">
-            Click on any tech pill or category card to interact with them flat-down.
-          </p>
         </div>
 
         {/* 5 Categories Grid Layout */}

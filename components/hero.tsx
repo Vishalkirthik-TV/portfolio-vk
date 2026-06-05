@@ -2,12 +2,42 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { links } from "@/config";
 import { skills } from "@/data";
 
 export const Hero = () => {
+  const greetings = [
+    "Bonjour!",
+    "Hola!",
+    "こんにちは!",
+    "Olá!",
+    "Ciao!",
+    "你好!",
+    "Привет!",
+    "Hallo!",
+    "Salut!",
+    "Hello there!",
+  ];
+
+  const [greeting, setGreeting] = useState(greetings[0]);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = window.setInterval(() => {
+      currentIndex += 1;
+      if (currentIndex >= greetings.length) {
+        window.clearInterval(interval);
+        return;
+      }
+      setGreeting(greetings[currentIndex]);
+    }, 180);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen pt-28 pb-12 px-4 overflow-hidden">
 
@@ -23,8 +53,10 @@ export const Hero = () => {
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-5">
 
           {/* Greeting Badge */}
-          <div className="nb-tag bg-[#4ECDC4] text-nb-dark text-xs font-extrabold uppercase px-3 py-1">
-            Hi there! 👋
+          <div className="nb-tag bg-[#4ECDC4] text-nb-dark text-[0.75rem] font-extrabold uppercase px-3 py-2 flex items-center justify-center gap-2">
+            <span className={`inline-block ${greeting === "Hello there!" ? "" : "animate-nb-greeting"}`}>
+              {greeting}
+            </span>
           </div>
 
           {/* Name Display */}
@@ -34,7 +66,7 @@ export const Hero = () => {
 
           {/* Short Bio Tagline */}
           <p className="text-base md:text-lg font-inter text-nb-dark/80 dark:text-white/80 max-w-lg leading-relaxed">
-            Fullstack developer based in Nagpur, building real-time communication platforms and automated OCR pipelines.
+            Thanks for stopping by 😀, I am Vishalkirthik based in Nagpur, India - Passionate about building systems and fullstack projects. 
           </p>
 
           {/* Social Icons Row */}
@@ -114,10 +146,10 @@ export const Hero = () => {
             {/* White Canvas Container */}
             <div className="relative w-full h-full bg-white dark:bg-nb-dark border-2 border-nb-dark dark:border-white rounded overflow-hidden flex items-center justify-center">
               <Image
-                src="/hero_image.png"
+                src="/hero_image.jpeg"
                 alt={links.ownerName}
                 fill
-                className="object-cover"
+                className="object-cover p-1"
                 priority
               />
             </div>

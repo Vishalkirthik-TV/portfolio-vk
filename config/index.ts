@@ -9,14 +9,11 @@ export const links = {
 } as const;
 
 export const siteConfig: Metadata = {
-  title: `${links.ownerName}'s Portfolio`,
+  title: `${links.ownerName}'s | Software Engineer | Fullstack`,
   description: "Neo-Brutalist Portfolio — Bold design, thick borders, hard shadows.",
   icons: {
-    icon: [
-      { url: "/icon1.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon2.png", sizes: "16x16", type: "image/png" }
-    ],
-    apple: "/apple-icon.png"
+    icon: "/favicon.svg",
+    apple: "/favicon.svg"
   },
   keywords: [
     "reactjs",

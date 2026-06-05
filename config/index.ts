@@ -4,11 +4,20 @@ export const links = {
   sourceCode: "https://github.com/vkboi5/portfolio-vk",
   ownerName: "Vishalkirthik",
   ownerEmail: "vishalkirthiktv@gmail.com",
+  github: "https://github.com/Vishalkirthik-TV",
+  linkedin: "https://www.linkedin.com/in/vishalkirthik",
 } as const;
 
 export const siteConfig: Metadata = {
   title: `${links.ownerName}'s Portfolio`,
-  description: "Modern & Minimalist Next.js Portfolio.",
+  description: "Neo-Brutalist Portfolio — Bold design, thick borders, hard shadows.",
+  icons: {
+    icon: [
+      { url: "/icon1.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon2.png", sizes: "16x16", type: "image/png" }
+    ],
+    apple: "/apple-icon.png"
+  },
   keywords: [
     "reactjs",
     "nextjs",

@@ -1,16 +1,10 @@
 "use client";
 
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
-
-import { navItems } from "@/data";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { navItems } from "@/data";
+import { useState, useEffect } from "react";
+import { ThemeToggle } from "./theme-toggle";
 
 type FloatingNavProps = {
   navItems: typeof navItems;
@@ -18,55 +12,51 @@ type FloatingNavProps = {
 };
 
 export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
-  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
 
-  const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useMotionValueEvent(scrollY, "change", (current) => {
-    if (typeof current === "number") {
-      if (current < 50) {
-        setVisible(true);
-      } else {
-        if (current > lastScrollY) {
-          setVisible(true);
-        } else {
-          setVisible(true);
-        }
-      }
-      setLastScrollY(current);
-    }
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.nav
-        initial={{ opacity: 1, y: -100 }}
-        animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
-        transition={{ duration: 0.2 }}
-        className={cn(
-          "fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-6xl items-center justify-between rounded-3xl border border-white/[0.2] bg-black-100 px-10 py-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
-          className
-        )}
-      >
-        {/* Logo Container */}
-        <div className="flex-shrink-0 scale-125">
-          <img src="/logo.png" alt="Logo" className="h-20 w-50" />
-        </div>
+    <nav
+      className={cn(
+        "fixed top-4 inset-x-4 z-[5000] mx-auto max-w-4xl px-4 md:px-6 py-2.5 bg-[#FFFDF7]/95 dark:bg-[#1a1a1a]/95 backdrop-blur-sm border-2 border-nb-dark dark:border-white rounded-xl transition-all duration-300",
+        scrolled ? "shadow-[4px_4px_0px_#1a1a1a] dark:shadow-[4px_4px_0px_#FFFDF7] top-3" : "shadow-[2px_2px_0px_#1a1a1a] dark:shadow-[2px_2px_0px_#FFFDF7]",
+        className
+      )}
+      id="navbar"
+    >
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 group font-space font-extrabold text-base md:text-lg text-nb-dark dark:text-white uppercase tracking-wider"
+        >
+          <div className="w-9 h-9 rounded-full bg-nb-coral border-2 border-nb-dark dark:border-white flex items-center justify-center shadow-[2px_2px_0px_#1a1a1a] dark:shadow-[2px_2px_0px_#FFFDF7] transition-all group-hover:bg-nb-yellow group-hover:shadow-[3px_3px_0px_#1a1a1a] dark:group-hover:shadow-[3px_3px_0px_#FFFDF7] group-hover:rotate-12">
+            <span className="text-sm">V</span>
+          </div>
+          <span className="hidden sm:inline-block">VishalKirthik TV</span>
+        </Link>
 
-        {/* Navigation Links Container */}
-        <div className="flex items-center space-x-8">
+        {/* Nav Links */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
           {navItems.map((navItem: any, idx: number) => (
             <Link
               key={`link-${idx}`}
               href={navItem.link}
-              className="relative flex items-center space-x-1 text-neutral-600 text-lg hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300"
+              className="relative px-2.5 py-1.5 sm:px-3.5 sm:py-2 text-nb-dark dark:text-white text-[11px] sm:text-xs md:text-sm font-extrabold font-space uppercase tracking-wide bg-transparent border-2 border-transparent hover:border-nb-dark dark:hover:border-white hover:bg-nb-yellow dark:hover:bg-nb-yellow hover:shadow-[3px_3px_0px_#1a1a1a] dark:hover:shadow-[3px_3px_0px_#FFFDF7] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none dark:active:shadow-none transition-all rounded-md"
             >
-              <span className="!cursor-pointer text-lg">{navItem.name}</span>
+              {navItem.name}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
-      </motion.nav>
-    </AnimatePresence>
+      </div>
+    </nav>
   );
 };

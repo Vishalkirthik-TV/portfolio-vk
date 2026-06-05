@@ -7,200 +7,166 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ] as const;
 
-export const gridItems = [
-  {
-    id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
-    img: "/b1.svg",
-    spareImg: "",
-  },
-  {
-    id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 4,
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
-  },
-
-  {
-    id: 5,
-    title: "Currently building a Mobile Application",
-    description: "The Inside Scoop",
-    className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
-  },
-  {
-    id: 6,
-    title: "Do you want to start a project together?",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
-  },
-] as const;
-
 export const projects = [
   {
     id: 1,
-    title: "Galerie - Digital NFT MarketPlace",
-    des: "A Online MarketPlace for Artisians, Collectors and Creators.",
+    title: "Linzo",
+    des: "Real-time VoIP communication platform with speech-to-text, text-to-speech, and sign-language-based visual assistance for accessible multilingual conversations.",
     img: "/galerie.png",
-    iconLists: ["/re.svg", "/pinata-svgrepo-com.svg", "/metamask-icon.svg", "/Hardhat.svg", "/Solidity.svg", "/CSS3.svg"],
-    link: "https://galerie-one.vercel.app/",
-    sourceCode: "https://github.com/arogyaconnect/Galerie",
+    iconLists: ["/re.svg", "/ts.svg", "/js.svg", "/jwt.svg"],
+    link: "https://github.com/Vishalkirthik-TV",
+    sourceCode: "https://github.com/Vishalkirthik-TV",
+    tags: ["React", "TypeScript", "Node.js", "Twilio SDK", "Auth0"],
+    color: "#FF6B6B",
   },
   {
     id: 2,
-    title: "Discover the Power of Social Media Insights",
-    des: "Unlock insights into social media engagement using Langflow and DataStax. Get started by exploring the analytics tool designed to provide dynamic insights.",
+    title: "FoodSense",
+    des: "Mobile app that spots food allergens in real time with on-device OCR and barcode scans, offering user profile customization and safe product alternatives.",
     img: "/splore.png",
-    iconLists: ["/re.svg", "/CSS3.svg", "/js.svg", "/jwt.svg", "/langflow.svg"],
-    link: "https://splore-ai.vercel.app",
-    sourceCode: "https://splore-ai.vercel.app",
+    iconLists: ["/re.svg", "/js.svg", "/ts.svg"],
+    link: "https://github.com/Vishalkirthik-TV",
+    sourceCode: "https://github.com/Vishalkirthik-TV",
+    tags: ["React Native", "Expo", "ML Kit", "Node.js", "MongoDB"],
+    color: "#4ECDC4",
   },
   {
     id: 3,
-    title: "Freelance Project - Find My Bills",
-    des: "Never Lose Your Bills Again. Your one-stop solution to store, search & retrieve all your invoices, bills, and travel tickets — anytime, anywhere.",
+    title: "Zent",
+    des: "Telegram-native escrow platform for freelancers with milestone-based payments, on-chain fund locking, and a Python-based OCR pipeline for automated document extraction.",
+    img: "/find-my-bills.png",
+    iconLists: ["/re.svg", "/ts.svg", "/Solidity.svg", "/Hardhat.svg"],
+    link: "https://github.com/Vishalkirthik-TV",
+    sourceCode: "https://github.com/Vishalkirthik-TV",
+    tags: ["React.js", "Node.js", "Python", "Solidity", "MongoDB"],
+    color: "#FFE66D",
+  },
+  {
+    id: 4,
+    title: "FindMyBills",
+    des: "OCR-powered bill digitization platform enabling searchable bill storage, expense insights, and improved document retrieval for individuals and businesses.",
     img: "/find-my-bills.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/azure.svg", "/firebase.svg"],
     link: "https://findmybills.vercel.app",
     sourceCode: "https://findmybills.vercel.app",
-  },
-  {
-    id: 4,
-    title: "Internship Project - Nayepankh",
-    des: "Nayepankh is a complete revamp of the public webiste of NGO Nayepankh",
-    img: "/nayepankh.png",
-    iconLists: ["/vite.svg", "/re.svg", "/mui.svg", "/ts.svg", "/firebase.svg", "/razorpay.png"],
-    link: "https://nayepankh-tan.vercel.app",
-    sourceCode: "https://nayepankh-tan.vercel.app",
-  },
-] as const;
-
-export const testimonials = [
-  {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote: `Collaborating with ${links.ownerName} was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. ${links.ownerName}'s enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, ${links.ownerName} is the ideal partner.`,
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-] as const;
-
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    tags: ["MERN Stack", "Azure OCR", "TypeScript"],
+    color: "#C3AED6",
   },
 ] as const;
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
+    title: "Software Engineering Intern",
+    company: "TripandThrill",
+    period: "Present",
+    desc: "Developed and optimized search and filtering for 500+ travel listings with pagination and query-based APIs. Revamped landing and listing UI, achieving 80+ Lighthouse scores. Built data-driven UI features like availability indicators and trending tags.",
+    tags: ["React.js", "Node.js", "Supabase", "PostgreSQL", "Vercel", "TypeScript"],
+    color: "#FF6B6B",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
+    title: "Freelance Dev",
+    company: "Independent",
+    period: "Jan 2025 – Jul 2025",
+    desc: "Built Roomies (shared accommodation platform with React Native & Firebase) and FindMyBills (OCR-powered bill digitization with MERN stack & Azure OCR). Contributed to ₹5,00,000+ in pre-seed funding for Roomies.",
+    tags: ["MERN Stack", "React Native", "TypeScript", "Firebase", "Azure OCR"],
+    color: "#4ECDC4",
   },
 ] as const;
+
+export const achievements = [
+  {
+    title: "Idea3 Industrial Hackathon",
+    place: "1st Place",
+    org: "SVPCET",
+    year: "2025",
+    color: "#FFE66D",
+  },
+  {
+    title: "GDG Hackathon",
+    place: "2nd Place",
+    org: "JD College of Engineering, Nagpur",
+    year: "2025",
+    color: "#FF6B6B",
+  },
+  {
+    title: "Sellathon Competition",
+    place: "2nd Place",
+    org: "IIIT Nagpur",
+    year: "2024",
+    color: "#4ECDC4",
+  },
+  {
+    title: "Telegram Mini App Hackathon",
+    place: "Finalist",
+    org: "Luma Labs & IIM Nagpur",
+    year: "2024",
+    color: "#C3AED6",
+  },
+  {
+    title: "E-Summit Pitchers 4.0",
+    place: "3rd Place",
+    org: "IIIT Nagpur",
+    year: "2024",
+    color: "#A8E6CF",
+  },
+  {
+    title: "Smart India Hackathon",
+    place: "Regional Qualifier",
+    org: "100k+ participants",
+    year: "2023",
+    color: "#74B9FF",
+  },
+  {
+    title: "Holistic Scholar Award",
+    place: "Recipient",
+    org: "",
+    year: "2024",
+    color: "#FF8B94",
+  },
+] as const;
+
+export const skillCategories = [
+  {
+    title: "Languages",
+    items: ["JavaScript", "TypeScript", "C++", "Python"],
+    color: "#FF6B6B"
+  },
+  {
+    title: "Frontend",
+    items: ["React.js", "React-Native", "Redux", "Material UI"],
+    color: "#4ECDC4"
+  },
+  {
+    title: "Backend",
+    items: ["Express.js", "NestJs"],
+    color: "#FFE66D"
+  },
+  {
+    title: "Databases & storage",
+    items: ["MongoDB", "PostgreSQL", "Firebase"],
+    color: "#A8E6CF"
+  },
+  {
+    title: "DevOps / Tooling / Others",
+    items: ["Git/GitHub", "Docker"],
+    color: "#C3AED6"
+  }
+] as const;
+
+export const skills = [
+  "JavaScript", "TypeScript", "React.js", "Redux", "Node.js",
+  "Express.js", "REST APIs", "MongoDB", "Git/GitHub", "Docker",
+  "C++", "Python"
+] as const;
+
+export const education = {
+  degree: "B.Tech in Computer Science and Business Systems",
+  period: "2022-26",
+  institution: "St. Vincent Pallotti College of Engineering and Technology",
+  location: "Nagpur, IN",
+} as const;
 
 export const socialMedia = [
   {
@@ -219,8 +185,3 @@ export const socialMedia = [
     link: "https://www.linkedin.com/in/vishalkirthik",
   },
 ] as const;
-
-export const techStack = {
-  stack1: ["React.js", "Next.js", "Typescript","Material UI"],
-  stack2: ["Vue.js", "AWS", "MongoDB"],
-} as const;

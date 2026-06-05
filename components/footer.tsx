@@ -1,193 +1,85 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { links } from "@/config";
 import Link from "next/link";
-import { FaLocationArrow } from "react-icons/fa6";
-import emailjs from "@emailjs/browser";
-
-import { MagicButton } from "@/components/ui/magic-button";
-import { socialMedia } from "@/data";
+import { navItems } from "@/data";
 
 export const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const serviceId = "service_u5kpf8a";
-    const templateId = "template_ma9q9ml";
-    const publicKey = "ZoczoxkteCk4-pAqv";
-
-    setIsLoading(true); // Show loading state
-
-    try {
-      await emailjs.send(serviceId, templateId, formData, publicKey);
-
-      setSuccessMessage("✅ Message sent successfully!"); // Show success message
-
-      // Reset form
-      setFormData({ name: "", email: "", message: "" });
-
-      // Hide success message & close modal after 3 seconds
-      setTimeout(() => {
-        setSuccessMessage("");
-        setIsModalOpen(false);
-      }, 3000);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setErrorMessage("❌ Failed to send message. Please try again.");
-
-      // Hide error message after 3 seconds
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 3000);
-    } finally {
-      setIsLoading(false); // Hide loading state
-    }
-  };
-
   return (
-    <footer id="contact" className="mb-[100px] w-full pb-10 md:mb-auto">
-      <div className="absolute -bottom-72 left-0 min-h-96 w-full">
-        <Image
-          src="/footer-grid.svg"
-          alt="grid"
-          className="h-full w-full opacity-50"
-          width={1260}
-          height={863}
-        />
-      </div>
+    <footer className="w-full pt-10 pb-8 px-4">
+      <div className="max-w-5xl mx-auto">
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
+        {/* Divider */}
+        <div className="nb-divider mb-8" />
 
-        <p className="my-5 text-center text-white-200 md:mt-10">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
 
-        {/* Open Contact Modal */}
-        <span onClick={() => setIsModalOpen(true)} className="md:mt-10">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-            asChild
-          />
-        </span>
-      </div>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-[#000319]/80 backdrop-blur-md">
-          <div className="relative w-96 rounded-2xl border border-white/20 bg-white/10 p-8 text-white shadow-xl backdrop-blur-lg">
-            <h2 className="mb-5 text-center text-3xl font-bold text-white">
-              Get in Touch
-            </h2>
-
-            {successMessage && (
-              <div className="animate-fade-in absolute left-1/2 top-[-60px] -translate-x-1/2 transform rounded-lg bg-green-500 px-5 py-3 text-white shadow-lg">
-                ✅ Message Sent Successfully!
+          {/* Left - Branding */}
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-[#FFE66D] nb-border-thin flex items-center justify-center">
+                <span className="font-space font-extrabold text-sm text-nb-dark">V</span>
               </div>
-            )}
+              <div>
+                <p className="font-space font-bold text-base text-nb-dark dark:text-white">
+                  {links.ownerName}
+                </p>
+                <p className="font-inter text-xs text-nb-dark/50 dark:text-white/50">
+                  Fullstack Developer
+                </p>
+              </div>
+            </div>
+          </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="focus:ring-purple-500 rounded-lg border border-white/30 bg-transparent p-4 text-white placeholder-gray-300 outline-none focus:ring-2"
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                required
-              />
-
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="focus:ring-purple-500 rounded-lg border border-white/30 bg-transparent p-4 text-white placeholder-gray-300 outline-none focus:ring-2"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                required
-              />
-
-              <textarea
-                placeholder="Your Message"
-                className="focus:ring-purple-500 rounded-lg border border-white/30 bg-transparent p-4 text-white placeholder-gray-300 outline-none focus:ring-2"
-                rows={5}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                required
-              />
-
-              <button
-                type="submit"
-                className="border-purple-500 rounded-lg border-2 bg-gradient-to-r from-[#6a11cb] to-[#eecbfa] p-4 font-semibold text-white transition-all duration-300 ease-in-out hover:scale-105 hover:border-white hover:shadow-lg hover:shadow-blue-500/50"
+          {/* Center - Nav Links */}
+          <div className="flex items-center gap-4 md:gap-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.link}
+                className="font-space font-bold text-xs text-nb-dark/60 dark:text-white/60 uppercase tracking-wide hover:text-nb-dark dark:hover:text-white transition-colors"
               >
-                Send Message
-              </button>
-            </form>
+                {item.name}
+              </Link>
+            ))}
+          </div>
 
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(false)}
-              className="absolute right-4 top-3 text-xl font-medium text-white transition hover:text-red-400"
+          {/* Right - Social Icons */}
+          <div className="flex items-center gap-3">
+            <a
+              href={links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="w-9 h-9 bg-white dark:bg-nb-dark border-nb-dark dark:border-white border-2 flex items-center justify-center hover:bg-[#FFE66D] dark:hover:bg-[#FFE66D] shadow-[2px_2px_0px_#1a1a1a] dark:shadow-[2px_2px_0px_#000000] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_#1a1a1a] dark:hover:shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none dark:active:shadow-none transition-all"
+              aria-label="GitHub"
             >
-              ✖
-            </button>
+              <FaGithub className="text-base text-nb-dark dark:text-white" />
+            </a>
+            <a
+              href={links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="w-9 h-9 bg-white dark:bg-nb-dark border-nb-dark dark:border-white border-2 flex items-center justify-center hover:bg-[#4ECDC4] dark:hover:bg-[#4ECDC4] shadow-[2px_2px_0px_#1a1a1a] dark:shadow-[2px_2px_0px_#000000] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_#1a1a1a] dark:hover:shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none dark:active:shadow-none transition-all"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="text-base text-nb-dark dark:text-white" />
+            </a>
+            <a
+              href="https://x.com/vishalkirthik5"
+              target="_blank"
+              rel="noreferrer"
+              className="w-9 h-9 bg-white dark:bg-nb-dark border-nb-dark dark:border-white border-2 flex items-center justify-center hover:bg-[#FF8B94] dark:hover:bg-[#FF8B94] shadow-[2px_2px_0px_#1a1a1a] dark:shadow-[2px_2px_0px_#000000] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_#1a1a1a] dark:hover:shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none dark:active:shadow-none transition-all"
+              aria-label="Twitter"
+            >
+              <FaTwitter className="text-base text-nb-dark dark:text-white" />
+            </a>
           </div>
         </div>
-      )}
 
-      {/* Footer Content */}
-      <div className="relative z-[999] mt-16 flex flex-col items-center justify-between md:flex-row">
-        <p className="text-sm font-light md:text-base md:font-normal">
-          Copyright &copy; {new Date().getFullYear()}{" "}
-          <Link
-            href="#"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-purple"
-          >
-            Vishalkirthik
-          </Link>{" "}
+        {/* Bottom copyright */}
+        <div className="nb-divider mt-8 mb-4" />
+        <p className="font-inter text-xs text-nb-dark/40 dark:text-white/40 text-center">
+          © {new Date().getFullYear()} {links.ownerName}. Built with Next.js & bold design.
         </p>
-
-        <div className="flex items-center gap-6 md:gap-3">
-          {socialMedia.map((profile) => (
-            <Link
-              key={profile.name}
-              href={profile.link}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="saturate-180 flex size-10 items-center justify-center rounded-lg border border-black-300 bg-black-200 bg-opacity-75 backdrop-blur-lg backdrop-filter"
-              title={profile.name}
-            >
-              <Image
-                src={profile.img}
-                alt={`profile-${profile.name}`}
-                width={20}
-                height={20}
-              />
-            </Link>
-          ))}
-        </div>
       </div>
     </footer>
   );

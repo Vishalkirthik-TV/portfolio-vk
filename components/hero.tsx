@@ -1,75 +1,173 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { FaLocationArrow } from "react-icons/fa6";
-
-import { Spotlight } from "@/components/ui/spotlight";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { MagicButton } from "@/components/ui/magic-button";
+import { FaArrowRight, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { links } from "@/config";
-import heroImg from "../public/hero-image.jpg";
+import { skills } from "@/data";
 
 export const Hero = () => {
   return (
-    <div className="relative pb-20 pt-36">
-      <div>
-        <Spotlight
-          className="-left-10 -top-40 h-screen md:-left-32 md:-top-20"
-          fill="white"
-        />
-        <Spotlight
-          className="left-full top-10 h-[80vh] w-[50vw]"
-          fill="purple"
-        />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
-      </div>
+    <div className="relative flex flex-col items-center justify-center min-h-screen pt-28 pb-12 px-4 overflow-hidden">
 
-      <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.03]">
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100" />
-      </div>
+      {/* Decorative floating background shapes */}
+      <div className="absolute top-36 left-6 md:left-12 w-12 h-12 bg-[#FFE66D] nb-border rotate-12 animate-nb-float hidden md:block" />
+      <div className="absolute top-48 right-10 md:right-16 w-10 h-10 bg-[#4ECDC4] nb-border rounded-full animate-nb-float-delayed hidden md:block" />
+      <div className="absolute bottom-40 left-12 w-8 h-8 bg-[#C3AED6] nb-border-thin rotate-45 animate-nb-float-delayed hidden md:block" />
 
-      <div className="relative z-10 my-16 flex justify-center">
-        <div className="grid max-w-[90vw] grid-cols-1 items-center gap-6 md:grid-cols-2 lg:max-w-[70vw]">
-          {/* Left side content */}
-          <div className="flex flex-col items-center md:items-start">
-            <h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-blue-100 md:text-left">
-              Dynamic Web Magic with Next.js
-            </h2>
+      {/* Main Content Grid */}
+      <div className="relative z-10 max-w-5xl w-full flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16 mt-6">
 
-            <TextGenerateEffect
-              className="max-w-[650px] text-center text-[40px] leading-tight tracking-wide md:text-left md:text-5xl lg:text-6xl"
-              words="Transforming Concepts into Seamless User Experiences"
-            />
+        {/* Left Column - Copy & CTA */}
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-5">
 
-            <p className="mb-4 text-center text-sm md:text-left md:text-lg md:tracking-wider lg:text-2xl">
-              Hi, I&apos;m {links.ownerName}, a FullStack developer based in
-              India.
-            </p>
-
-            <Link href="#about" className="md:mt-6 mb-3">
-              <MagicButton
-                title="Show my work"
-                icon={<FaLocationArrow />}
-                position="right"
-                asChild
-              />
-            </Link>
+          {/* Greeting Badge */}
+          <div className="nb-tag bg-[#4ECDC4] text-nb-dark text-xs font-extrabold uppercase px-3 py-1">
+            Hi there! 👋
           </div>
 
-          {/* Right side image */}
-          <div className="flex justify-center md:justify-end">
-            <div className="relative flex items-center justify-center">
-              {/* White Circular Background */}
-              <div className="absolute -z-10 h-[240px] w-[240px] rounded-full bg-white shadow-md md:h-[280px] md:w-[280px]" />
+          {/* Name Display */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold font-space text-nb-dark dark:text-white leading-[0.95] tracking-tight uppercase">
+            I&apos;m VishalKirthik.
+          </h1>
 
+          {/* Short Bio Tagline */}
+          <p className="text-base md:text-lg font-inter text-nb-dark/80 dark:text-white/80 max-w-lg leading-relaxed">
+            Fullstack developer based in Nagpur, building real-time communication platforms and automated OCR pipelines.
+          </p>
+
+          {/* Social Icons Row */}
+          <div className="flex gap-3 mt-1">
+            <a
+              href={links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white dark:bg-nb-dark border-2 border-nb-dark dark:border-white flex items-center justify-center shadow-[3px_3px_0px_#1a1a1a] dark:shadow-[3px_3px_0px_#000000] hover:bg-nb-yellow dark:hover:bg-nb-yellow hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_#1a1a1a] dark:hover:shadow-[4px_4px_0px_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none dark:active:shadow-none transition-all"
+            >
+              <FaGithub className="text-lg text-nb-dark dark:text-white" />
+            </a>
+            <a
+              href={links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white dark:bg-nb-dark border-2 border-nb-dark dark:border-white flex items-center justify-center shadow-[3px_3px_0px_#1a1a1a] dark:shadow-[3px_3px_0px_#000000] hover:bg-[#74B9FF] dark:hover:bg-[#74B9FF] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_#1a1a1a] dark:hover:shadow-[4px_4px_0px_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none dark:active:shadow-none transition-all"
+            >
+              <FaLinkedinIn className="text-lg text-nb-dark dark:text-white" />
+            </a>
+            <a
+              href="https://x.com/vishalkirthik5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white dark:bg-nb-dark border-2 border-nb-dark dark:border-white flex items-center justify-center shadow-[3px_3px_0px_#1a1a1a] dark:shadow-[3px_3px_0px_#000000] hover:bg-[#FF8B94] dark:hover:bg-[#FF8B94] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_#1a1a1a] dark:hover:shadow-[4px_4px_0px_#000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none dark:active:shadow-none transition-all"
+            >
+              <FaXTwitter className="text-lg text-nb-dark dark:text-white" />
+            </a>
+          </div>
+
+          {/* Action Row */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mt-3">
+            <Link href="#contact">
+              <button className="nb-btn bg-[#FFE66D] text-nb-dark text-sm px-6 py-3">
+                Get in Touch!
+                <FaArrowRight className="text-xs" />
+              </button>
+            </Link>
+
+            {/* Direct Resume Download link */}
+            <div className="flex items-center gap-2.5">
+              <a
+                href="/VISHALKIRTHIK_RESUME.pdf"
+                download
+                className="nb-btn bg-white dark:bg-nb-dark text-nb-dark dark:text-white text-xs py-2 px-4 border-2 border-nb-dark dark:border-white hover:bg-[#A8E6CF] dark:hover:bg-[#A8E6CF] dark:hover:text-nb-dark"
+              >
+                Download CV
+              </a>
+              <div className="flex items-center gap-1.5 text-nb-dark/50 dark:text-white/50 hidden sm:flex select-none">
+                <svg
+                  className="w-7 h-7 -rotate-12 translate-y-0.5 text-nb-dark dark:text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
+                  />
+                </svg>
+                <span className="font-space font-extrabold text-xs italic">Resume / CV!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Slanted Avatar Display */}
+        <div className="flex-shrink-0 relative mt-6 lg:mt-0">
+
+          {/* Slanted Tape Decoration */}
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-7 bg-[#FFE66D]/80 border-2 border-nb-dark z-20 rotate-[-6deg]" />
+
+          {/* Outer Slanted Frame */}
+          <div className="relative z-10 w-64 h-72 md:w-72 md:h-80 lg:w-80 lg:h-[350px] bg-[#74B9FF] border-3 border-nb-dark dark:border-white rounded-lg shadow-[8px_8px_0px_#1a1a1a] dark:shadow-[8px_8px_0px_#000000] rotate-[2deg] overflow-hidden p-3.5">
+            {/* White Canvas Container */}
+            <div className="relative w-full h-full bg-white dark:bg-nb-dark border-2 border-nb-dark dark:border-white rounded overflow-hidden flex items-center justify-center">
               <Image
-                src={heroImg}
-                alt="Developer at work"
-                width={280}
-                height={280}
-                className="h-[200px] w-[200px] rounded-full shadow-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-blue-500/50 md:h-[250px] md:w-[250px]"
+                src="/hero_image.png"
+                alt={links.ownerName}
+                fill
+                className="object-cover"
+                priority
               />
             </div>
           </div>
+
+          {/* Floating Elements */}
+          {/* Terminal Tag */}
+          <div className="absolute -top-3 -right-6 z-20 bg-nb-dark text-green-400 border-2 border-nb-dark py-1 px-3 rounded shadow-[3px_3px_0px_#A8E6CF] text-xs font-mono font-bold animate-nb-float rotate-[8deg]">
+            &gt;_ dev
+          </div>
+
+          {/* Code Delimiter Tag */}
+          <div className="absolute top-24 -left-10 z-20 bg-[#FFE66D] text-nb-dark border-2 border-nb-dark dark:border-white p-2.5 rounded shadow-[3px_3px_0px_#1a1a1a] dark:shadow-[3px_3px_0px_#000000] text-xs font-bold animate-nb-float-delayed rotate-[-12deg]">
+            &lt;/&gt;
+          </div>
+
+          {/* Floppy Storage Tag */}
+          <div className="absolute bottom-12 -left-10 z-20 bg-[#A8E6CF] border-2 border-nb-dark dark:border-white p-2 rounded shadow-[3px_3px_0px_#1a1a1a] dark:shadow-[3px_3px_0px_#000000] animate-nb-float">
+            <svg
+              className="w-6 h-6 text-nb-dark dark:text-white"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+          </div>
+
+          {/* Ninja tag bottom right */}
+          <div className="absolute -bottom-3 -right-4 z-20 bg-[#FF8B94] text-nb-dark border-2 border-nb-dark dark:border-white font-space font-extrabold text-xs uppercase px-4 py-2 shadow-[3px_3px_0px_#1a1a1a] dark:shadow-[3px_3px_0px_#000000] rotate-[-3deg]">
+            Fullstack Wizard
+          </div>
+        </div>
+      </div>
+
+      {/* Infinite Skills Marquee */}
+      <div className="w-full mt-20 border-y-3 border-nb-dark bg-[#FFE66D] py-3.5 rotate-[0.5deg] overflow-hidden select-none relative z-10">
+        <div className="flex gap-10 whitespace-nowrap animate-marquee">
+          {[...skills, ...skills, ...skills].map((skill, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-2.5 font-space font-extrabold text-xs md:text-sm uppercase tracking-wider text-nb-dark"
+            >
+              <span>✦</span>
+              <span>{skill}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
